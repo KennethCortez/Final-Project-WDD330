@@ -1,0 +1,94 @@
+:root {
+    --background-color: #1E1E2E;
+    --accent-color: #EFA00B;
+    --accent-color-2: #bb80b3;
+    --code-font: monospace;
+}
+
+/*Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    background-image: radial-gradient(circle, #d0d0d0 0.001px, transparent 0.5px);
+    background-size: 24px 24px;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+}
+
+/*Header*/
+header {
+    background-color: var(--background-color);
+    height: 80px;
+    padding: 10px;
+    border-bottom: 1px solid var(--accent-color);
+    border-bottom-style: dashed;
+}
+
+.logo {
+    background-color: var(--background-color);
+    
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.welcome-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+}
+
+.typewriter {
+    font-family: var(--code-font);
+    font-size: 3em;
+    color: var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s steps(12, end) forwards, blink 0.7s step-end infinite;
+}
+
+.welcome-container button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: var(--code-font);
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-container button:hover {
+    background-color: #ffc94b;
+}
+
+/* to hide it */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95)
+}
+
+/*animations*/
+@keyframes typing {
+    from { width: 0 }
+    to { width: 12ch }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
