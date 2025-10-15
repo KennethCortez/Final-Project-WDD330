@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programing Dictionary</title>
+    <title>FrontDictionary</title>
     <meta name="description" content="A programming dictionary for developers.">
     <meta name="author" content="Kenneth Cortez">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/app.mjs" type="module"></script>
 </head>
 <body>
     <header>
@@ -18,8 +18,12 @@
     </header>
     <main>
         <div class="welcome-container" id="welcome-container">
-            <h1 class="typewriter">Hello there!</h1>
+            <h1 class="typewriter">>Hello there!</h1>
             <button id="closeModal">Lets learn some code</button>
+        </div>
+        <div class="search-container" id="search-container">
+            <input type="text" id="searchInput" placeholder="Search for a programming term...">
+            <button id="searchButton">Search</button>
         </div>
     </main>
     <footer></footer>

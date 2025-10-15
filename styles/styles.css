@@ -45,6 +45,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: transparent;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .typewriter {
@@ -55,8 +56,9 @@ header {
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    animation: typing 1s steps(12, end) forwards, blink 0.7s step-end infinite;
+    animation: typing 1s steps(13, end) forwards, blink 0.7s step-end infinite;
 }
+
 
 .welcome-container button {
     background-color: var(--accent-color);
@@ -81,12 +83,17 @@ header {
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95)
+    
+}
+
+.search-container {
+    display: none;
 }
 
 /*animations*/
 @keyframes typing {
     from { width: 0 }
-    to { width: 12ch }
+    to { width: 13ch }
 }
 
 @keyframes blink {
