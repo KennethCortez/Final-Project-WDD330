@@ -1,15 +1,37 @@
 
 export function searchElements(dictionary, renderEntry) {
     const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
 
-    searchInput.addEventListener("input", (event) => {
-    const query = event.target.value.toLowerCase();
+    if (!searchInput || !searchButton) return;
 
-    const results = dictionary.filter(entry =>
-        entry.term.toLowerCase().includes(query)
-    );
+    function executeSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        
+        if (!query) {
+            renderEntry([]);
+            return;
+        }
 
-    renderEntry(results);
+        const results = dictionary.filter(entry =>
+            entry.term.toLowerCase().includes(query)
+        );
+
+        if (results.length > 0){
+            renderEntry([results[0]]);
+        }else {
+            renderEntry([]);
+        }
+    }
+
+    // execute search on button click
+    searchButton.addEventListener("click", executeSearch);
+
+    // execute search on Enter key press
+    searchInput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+        executeSearch();
+        }
     });
 }
 
@@ -36,17 +58,19 @@ export function greetings(onCloseCallback) {
 
 // Function to render dictionary entries to the DOM
 export function renderEntry(entries) {
-const container = document.getElementById("results");
-if (!container) return;
+    const container = document.getElementById("results");
+    if (!container) return;
 
-container.innerHTML = "";
+    container.innerHTML = "";
 
-if (entries.length === 0) {
-    container.innerHTML = "<p>No results found.</p>";
-    return;
-}
+    if (entries.length === 0) {
+        container.innerHTML = '<p class="noResults">No results found.</p>';
+        return;
+    }
 
-entries.forEach(entry => {
+    const entry = entries[0]; // Show only the first exact match
+
+
     const div = document.createElement("div");
     div.classList.add("entry");
     div.innerHTML = `
@@ -58,7 +82,6 @@ entries.forEach(entry => {
     <a href="${entry.source}" target="_blank" class="source-link">View more</a>
     `;
     container.appendChild(div);
-});
 }
 
 

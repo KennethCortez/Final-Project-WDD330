@@ -1,0 +1,39 @@
+{
+"entries": [
+{
+    "term": "Array",
+    "definition": "An Array is a special variable that can hold more than one value at a time. Arrays are used to store multiple values in a single variable.",
+    "syntax": "let fruits = ['apple', 'banana', 'cherry'];",
+    "example": "const numbers = [1, 2, 3, 4];\nconsole.log(numbers[0]); // Output: 1",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+},
+{
+    "term": "Function",
+    "definition": "A function is a block of code designed to perform a particular task. It is executed when something invokes it (calls it).",
+    "syntax": "function greet(name) {\n  return 'Hello ' + name;\n}",
+    "example": "console.log(greet('Kenneth')); // Output: Hello Kenneth",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions"
+},
+{
+    "term": "Promise",
+    "definition": "A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value.",
+    "syntax": "const promise = new Promise((resolve, reject) => {\n  resolve('Success');\n});",
+    "example": "promise.then(result => console.log(result)); // Output: Success",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+},
+{
+    "term": "Map",
+    "definition": "The Map object holds key-value pairs and remembers the original insertion order of the keys.",
+    "syntax": "const map = new Map();\nmap.set('name', 'Kenneth');",
+    "example": "console.log(map.get('name')); // Output: Kenneth",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"
+},
+{
+    "term": "Class",
+    "definition": "Classes are templates for creating objects. They encapsulate data with code to work on that data.",
+    "syntax": "class Person {\n  constructor(name) {\n    this.name = name;\n  }\n}",
+    "example": "const user = new Person('Kenneth');\nconsole.log(user.name); // Output: Kenneth",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes"
+}
+]
+}
