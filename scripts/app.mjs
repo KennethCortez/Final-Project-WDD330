@@ -1,4 +1,4 @@
-import { greetings, searchElements, renderEntry } from "./utils.mjs";
+import { greetings, searchElements, renderEntry, toggleTheme, loadTheme, languageFilter} from "./utils.mjs";
 import { loadDictionary } from "./api.mjs";
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     greetings(() => {
         searchElements(dictionary, renderEntry);
     });
+
+    languageFilter();
+
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    
+    loadTheme();
+
+    
+    const btn = document.getElementById("themeToggle");
+    btn.addEventListener("click", toggleTheme);
+});

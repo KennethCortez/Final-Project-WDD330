@@ -1,39 +1,236 @@
 {
 "entries": [
-{
+    {
     "term": "Array",
-    "definition": "An Array is a special variable that can hold more than one value at a time. Arrays are used to store multiple values in a single variable.",
-    "syntax": "let fruits = ['apple', 'banana', 'cherry'];",
-    "example": "const numbers = [1, 2, 3, 4];\nconsole.log(numbers[0]); // Output: 1",
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
-},
-{
-    "term": "Function",
-    "definition": "A function is a block of code designed to perform a particular task. It is executed when something invokes it (calls it).",
-    "syntax": "function greet(name) {\n  return 'Hello ' + name;\n}",
-    "example": "console.log(greet('Kenneth')); // Output: Hello Kenneth",
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions"
-},
-{
-    "term": "Promise",
-    "definition": "A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value.",
-    "syntax": "const promise = new Promise((resolve, reject) => {\n  resolve('Success');\n});",
-    "example": "promise.then(result => console.log(result)); // Output: Success",
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
-},
-{
-    "term": "Map",
-    "definition": "The Map object holds key-value pairs and remembers the original insertion order of the keys.",
-    "syntax": "const map = new Map();\nmap.set('name', 'Kenneth');",
-    "example": "console.log(map.get('name')); // Output: Kenneth",
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"
-},
-{
+    "definition": "Object that enables storing multiple values under a single variable name, with numeric indexing.",
+    "syntax": "let arr = [item1, item2, item3];",
+    "example": "const nums = [1, 2, 3]; console.log(nums[0]); // 1",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Arrow Function",
+    "definition": "A concise way to write anonymous functions using => syntax.",
+    "syntax": "const sum = (a, b) => a + b;",
+    "example": "const greet = name => `Hello ${name}`; console.log(greet('Ken'));",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Async/Await",
+    "definition": "Syntax for writing asynchronous code in a synchronous style using async and await.",
+    "syntax": "async function fetchData() { const res = await fetch(url); }",
+    "example": "async function load() { const r = await fetch('api'); console.log(await r.json()); }",
+    "source": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Boolean",
+    "definition": "A primitive data type that can only have two values: true or false.",
+    "syntax": "let flag = true;",
+    "example": "const isOpen = false; if (!isOpen) console.log('Closed');",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Callback",
+    "definition": "A function passed as an argument to another function, invoked after some operation completes.",
+    "syntax": "function doTask(cb) { cb(); }",
+    "example": "setTimeout(() => console.log('Hello!'), 1000);",
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function",
+    "difficulty": "medium"
+    },
+    {
     "term": "Class",
-    "definition": "Classes are templates for creating objects. They encapsulate data with code to work on that data.",
-    "syntax": "class Person {\n  constructor(name) {\n    this.name = name;\n  }\n}",
-    "example": "const user = new Person('Kenneth');\nconsole.log(user.name); // Output: Kenneth",
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes"
-}
+    "definition": "A template for creating objects with properties and methods (syntactic sugar over prototypes).",
+    "syntax": "class Person { constructor(name) { this.name = name; } }",
+    "example": "class P { constructor(n) { this.n = n; } greet() { console.log(`Hi ${this.n}`); } }",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Closure",
+    "definition": "A function that captures variables from its outer lexical scope, preserving them.",
+    "syntax": "function outer() { let x = 10; return function inner() { return x; }; }",
+    "example": "const fn = outer(); console.log(fn()); // 10",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures",
+    "difficulty": "hard"
+    },
+    {
+    "term": "Conditional (ternary)",
+    "definition": "Shorthand syntax for an if-else expression using ? :.",
+    "syntax": "condition ? expr1 : expr2",
+    "example": "let age = 18; let msg = age >= 18 ? 'Adult' : 'Minor';",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Const",
+    "definition": "Declares a block-scoped constant whose value cannot be reassigned.",
+    "syntax": "const PI = 3.14;",
+    "example": "const name = 'Ken'; console.log(name);",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Default Parameters",
+    "definition": "Function parameters that have default values if no argument is passed.",
+    "syntax": "function f(a = 10, b = 5) { ... }",
+    "example": "function greet(name = 'Guest') { console.log(`Hello ${name}`); }",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Destructuring",
+    "definition": "Syntax to unpack values from arrays or objects into distinct variables.",
+    "syntax": "const {a, b} = obj; const [x, y] = arr;",
+    "example": "const obj = {a:1, b:2}; const {a, b} = obj; console.log(a, b);",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Document Object Model (DOM)",
+    "definition": "A programming interface for HTML and XML documents; the document tree.",
+    "syntax": "document.getElementById('id');",
+    "example": "const el = document.querySelector('div'); el.innerText = 'Hello';",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Dot notation",
+    "definition": "Access object properties using a dot followed by the property name.",
+    "syntax": "object.property",
+    "example": "const o = {x:1}; console.log(o.x);",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Fetch API",
+    "definition": "Modern interface for making network requests returning Promises.",
+    "syntax": "fetch(url).then(resp => resp.json());",
+    "example": "fetch('https://api').then(r => r.json()).then(j => console.log(j));",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Finally",
+    "definition": "Clause in try/catch that executes after try or catch regardless of result.",
+    "syntax": "try { ... } catch(e) { ... } finally { ... }",
+    "example": "try { throw 'err'; } catch(e) { console.log(e); } finally { console.log('done'); }",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch#syntax",
+    "difficulty": "easy"
+    },
+    {
+    "term": "For Loop",
+    "definition": "Loop statement for iterating with initialization, condition, and increment.",
+    "syntax": "for (let i = 0; i < n; i++) { ... }",
+    "example": "for (let i = 0; i < 5; i++) console.log(i);",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Function Declaration",
+    "definition": "Defines a named function using the function keyword.",
+    "syntax": "function foo(a, b) { return a + b; }",
+    "example": "function sum(a, b) { return a + b; } console.log(sum(2,3));",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Function Expression",
+    "definition": "Defines a function inside an expression and can be anonymous.",
+    "syntax": "const f = function(a, b) { return a + b; };",
+    "example": "const square = function(x) { return x * x; }; console.log(square(4));",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Generator",
+    "definition": "Function type that can be paused and resumed, using yield.",
+    "syntax": "function* gen() { yield 1; yield 2; }",
+    "example": "function* g() { yield 1; yield 2; } for (let v of g()) console.log(v);",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators",
+    "difficulty": "hard"
+    },
+    {
+    "term": "Global Scope",
+    "definition": "Variables declared outside functions have global scope accessible anywhere.",
+    "syntax": "let x = 5;",
+    "example": "var g = 10; function f() { console.log(g); } f();",
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/Global_scope",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Hoisting",
+    "definition": "Behavior where variable and function declarations are moved to top of scope.",
+    "syntax": "console.log(a); var a = 5;",
+    "example": "function foo() { console.log(x); var x = 3; } foo(); // prints undefined",
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/Hoisting",
+    "difficulty": "medium"
+    },
+    {
+    "term": "If Statement",
+    "definition": "Conditional statement that executes code if a condition is true.",
+    "syntax": "if (cond) { ... } else { ... }",
+    "example": "if (x > 5) console.log('big'); else console.log('small');",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Import/Export",
+    "definition": "Syntax to export and import modules in ES modules.",
+    "syntax": "export function f() { } // import { f } from './mod.js';",
+    "example": "// module.js: export const x = 10; // main.js: import { x } from './module.js';",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
+    "difficulty": "medium"
+    },
+    {
+    "term": "JSON",
+    "definition": "JavaScript Object Notation, a lightweight data-interchange format.",
+    "syntax": "JSON.parse(str) / JSON.stringify(obj)",
+    "example": "const s = '{\"a\":1}'; console.log(JSON.parse(s));",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Let",
+    "definition": "Declares a block-scoped variable, unlike var.",
+    "syntax": "let x = 5;",
+    "example": "{ let x = 1; } console.log(typeof x); // undefined",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let",
+    "difficulty": "easy"
+    },
+    {
+    "term": "Map (Object)",
+    "definition": "Collection of key-value pairs, iterables, preserves insertion order.",
+    "syntax": "const m = new Map(); m.set(key, value);",
+    "example": "const m = new Map(); m.set('a',1); console.log(m.get('a'));",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Math",
+    "definition": "Built-in object with mathematical constants and functions.",
+    "syntax": "Math.max(1, 2, 3);",
+    "example": "console.log(Math.PI, Math.random());",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math",
+    "difficulty": "easy"
+    },
+    {
+    "term": "NaN",
+    "definition": "Stands for \"Not a Number\", result of invalid numeric operation.",
+    "syntax": "0 / 0",
+    "example": "console.log(Number('a')); // NaN",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "difficulty": "medium"
+    },
+    {
+    "term": "Null",
+    "definition": "Represents intentional absence of any object value.",
+    "syntax": "let x = null;",
+    "example": "const y = null; console.log(y);",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "difficulty": "easy"
+    }
 ]
 }

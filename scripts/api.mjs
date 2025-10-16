@@ -1,3 +1,5 @@
+import { GIPHY_API_KEY } from "./config.mjs";
+
 // loads the dictionary JSON file
 export async function loadDictionary(language) {
     try {
@@ -21,6 +23,45 @@ export async function loadDictionary(language) {
         return [];
     }
 }
+
+export async function getGifByDifficulty(difficulty) {
+    try {
+        const query = `${difficulty} difficulty coding`;
+        const url = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${encodeURIComponent(query)}&limit=1&rating=g`;
+
+        const response = await fetch(url);
+        const data = await response.json();
+        if (data.data.length === 0) return null;
+
+        const gif = data.data[0];
+        return {
+            title: gif.title,
+            url: gif.images.fixed_height.url,
+            category: "difficulty",
+            difficultyLevel: difficulty,
+            id: gif.id,
+            source: `https://giphy.com/gifs/${gif.id}`
+        };
+    } catch (err) {
+        console.error("Failed to fetch GIF:", err);
+        return null;
+    }
+}
+
+
+export async function getAdviceSlip() {
+    try {
+        const response = await fetch("https://api.adviceslip.com/advice");
+        const data = await response.json();
+        return data.slip.advice;
+    } catch (error) {
+        console.error("Failed to load advice:", error);
+        return "No advice available right now.";
+    }
+}
+
+
+
 
 
 // export function parseDictionaryEntries(entries) {
