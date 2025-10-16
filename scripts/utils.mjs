@@ -15,7 +15,19 @@ export function searchElements(dictionary, renderEntry) {
     searchButton.parentNode.replaceChild(newButton, searchButton);
 
     function executeSearch() {
-        const query = newInput.value.trim().toLowerCase();
+    const query = newInput.value.trim().toLowerCase();
+    const langBtn = document.querySelector(".lang-btn.active");
+    const currentLang = langBtn ? langBtn.dataset.lang : "javascript";
+    const currentTheme = document.body.classList.contains("light-mode") ? "light" : "dark";
+
+    function saveState(query, lang, theme) {
+    localStorage.setItem("lastQuery", query);
+    localStorage.setItem("lastLang", lang);
+    localStorage.setItem("theme", theme);
+    }
+
+    saveState(query, currentLang, currentTheme);
+
         if (!query) {
             renderEntry([]);
             return;
@@ -37,8 +49,6 @@ export function searchElements(dictionary, renderEntry) {
         if (event.key === "Enter") executeSearch();
     });
 }
-
-
 
 export function greetings(onCloseCallback) {
     const modal = document.getElementById("welcome-container");
@@ -160,6 +170,8 @@ export function languageFilter() {
 
         const data = await loadDictionary(selectedLang);
         console.log(`Loaded ${selectedLang} dictionary`, data);
+
+        localStorage.setItem("lastLang", selectedLang);
 
         searchElements(data, renderEntry);
         });
